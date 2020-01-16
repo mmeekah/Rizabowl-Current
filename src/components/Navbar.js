@@ -36,8 +36,17 @@ export default class Navbar extends Component {
                     <a href="https://www.pinterest.com/justinablakeney/ceramics-pottery/">
                       <i className="fab fa-pinterest text-light" />
                     </a>
+                    <Link to="/login">
+                      <i className="fas fa-user text-light ml-2"></i>
+                    </Link>
                   </div>
                 </div>
+
+                {/* <div className="shopcart js-shop-cart">
+                  <div className="icon">
+                   
+                  </div>
+                </div> */}
               </div>
             </div>
           </div>
