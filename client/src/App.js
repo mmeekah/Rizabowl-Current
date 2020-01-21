@@ -31,10 +31,10 @@ class App extends React.Component {
         <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/about/" component={About} />
-          <Route exact path="/profile/" component={Profile} />
-          <Route exact path="/blog/" component={Blog} />
-          <Route exact path="/products/" component={Products} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/profile" component={Profile} />
+          <Route exact path="/blog" component={Blog} />
+          <Route exact path="/products" component={Products} />
           <Route exact path="/products/:slug" component={SingleProduct} />
           <Route exact path="/login" component={Login} />
           <Route component={Error} />
