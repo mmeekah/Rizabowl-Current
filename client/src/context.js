@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import items from "./data";
+// import items from "./data";
+import axios from "axios";
 const ProductContext = React.createContext();
 //<ProductContext.Provider value={'hello'}
 
@@ -23,35 +24,27 @@ class ProductProvider extends Component {
   //getData{
 
   componentDidMount() {
-    //this.getData
-    let products = this.formatData(items);
-    let featuredProducts = products.filter(
+    this.fetchData();
+  }
+
+  fetchData = async () => {
+    const res = await axios.get("/api/product");
+    let maxPrice = Math.max(...res.data.map(item => item.price));
+    let maxSize = Math.max(...res.data.map(item => item.size));
+    let featuredProducts = res.data.filter(
       product => product.featured === true
     );
-    let maxPrice = Math.max(...products.map(item => item.price));
-    let maxSize = Math.max(...products.map(item => item.size));
 
     this.setState({
-      products,
-      featuredProducts,
-      sortedProducts: products,
-      loading: false,
-      price: maxPrice,
+      products: res.data,
+      sortedProducts: res.data,
       maxPrice,
-      maxSize
+      maxSize,
+      price: maxPrice,
+      loading: false,
+      featuredProducts
     });
-  }
-
-  formatData(items) {
-    let tempItems = items.map(item => {
-      let id = item.sys.id;
-      let images = item.fields.images.map(image => image.fields.file.url);
-
-      let product = { ...item.fields, images, id };
-      return product;
-    });
-    return tempItems;
-  }
+  };
 
   getProduct = slug => {
     let tempProducts = [...this.state.products];
@@ -69,6 +62,11 @@ class ProductProvider extends Component {
       },
       this.filterProducts
     );
+  };
+
+  loadUser = async () => {
+    const user = await axios.get("/api/user/load");
+    this.setState({ user });
   };
 
   filterProducts = () => {
@@ -128,7 +126,8 @@ class ProductProvider extends Component {
         value={{
           ...this.state,
           getProduct: this.getProduct,
-          handleChange: this.handleChange
+          handleChange: this.handleChange,
+          fetchData: this.fetchData
         }}
       >
         {this.props.children}

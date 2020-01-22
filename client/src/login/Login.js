@@ -12,7 +12,6 @@ export default function Login() {
 
   const handleSubmit = async e => {
     e.preventDefault();
-
     const formData = { email, password };
     const res = await axios.post("/api/user/login", formData);
     if (res.data) {

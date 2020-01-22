@@ -15,6 +15,8 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Login from "./login/Login";
 
+import CreateProduct from "./components/CreateProduct";
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -40,9 +42,6 @@ class App extends React.Component {
           <Route component={Error} />
         </Switch>
         <Footer />
-        {isLoggingActive && (
-          <Login containerRef={ref => (this.current = ref)} />
-        )}
       </>
     );
   }

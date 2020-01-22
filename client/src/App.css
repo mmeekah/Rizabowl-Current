@@ -69,6 +69,20 @@ h6 {
   background: transparent;
   color: var(--primaryColor);
 }
+
+.addBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 50%;
+  background: var(--primaryColor);
+  color: #f4f4f4;
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+  border: none;
+}
+
 .loading {
   text-transform: capitalize;
   text-align: center;
@@ -315,6 +329,18 @@ h6 {
 }
 .loginHero {
   background-image: url("./images/login2.jpg");
+  min-height: 60vh;
+}
+
+.createHero {
+  min-height: calc(100vh - 66px);
+  background: url("./images/create.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.createHero {
+  background-image: url("./images/create.jpg");
   min-height: 60vh;
 }
 

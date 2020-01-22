@@ -22,7 +22,7 @@ router.post("/login", async (req, res) => {
     } else {
       const payload = {
         user: {
-          id: user.is
+          id: user.id
         }
       };
       jwt.sign(
@@ -38,6 +38,12 @@ router.post("/login", async (req, res) => {
       );
     }
   }
+});
+
+// Load user
+router.get("/load", auth, async (req, res) => {
+  const user = await User.findById(req.user.id);
+  res.json(user);
 });
 
 module.exports = router;

@@ -9,6 +9,7 @@ export default function ProductList({ products }) {
       </div>
     );
   }
+
   return (
     <section className="roomslist">
       <div className="roomslist-center">
