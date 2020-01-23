@@ -9,8 +9,7 @@ const INITIAL_PRODUCT = {
   description: "",
   price: "",
   size: "",
-  count: "",
-  slug: "",
+  capacity: "",
   type: ""
 };
 
@@ -45,6 +44,16 @@ export default function CreateProduct({ fetchData, setCreating, creating }) {
                 value={product.name}
                 onChange={handleChange}
               ></input>
+
+              {/* <label htmlFor="slug">Slug</label>
+              <input
+                type="text"
+                name="slug"
+                placeholder="serving-bowl"
+                className="input"
+                value={product.slug}
+                onChange={handleChange}
+              ></input> */}
 
               <label htmlFor="type">Category</label>
               <input
@@ -91,7 +100,7 @@ export default function CreateProduct({ fetchData, setCreating, creating }) {
               <label htmlFor="count">Set Size</label>
               <input
                 type="number"
-                name="count"
+                name="capacity"
                 placeholder="set size"
                 className="input"
                 value={product.count}

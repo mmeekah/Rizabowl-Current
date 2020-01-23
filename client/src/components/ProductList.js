@@ -1,7 +1,12 @@
 import React from "react";
 import Product from "./Product";
 
-export default function ProductList({ products }) {
+export default function ProductList({
+  products,
+  fetchData,
+  removeProduct,
+  user
+}) {
   if (products.length === 0) {
     return (
       <div className="empty-search">
@@ -14,7 +19,15 @@ export default function ProductList({ products }) {
     <section className="roomslist">
       <div className="roomslist-center">
         {products.map(item => {
-          return <Product key={item.id} product={item} />;
+          return (
+            <Product
+              user={user}
+              key={item._id}
+              product={item}
+              fetchData={fetchData}
+              removeProduct={removeProduct}
+            />
+          );
         })}
       </div>
     </section>

@@ -2,8 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import defaultImg from "../images/room-1.jpeg";
 import PropTypes from "prop-types";
-export default function Product({ product }) {
-  const { name, slug, images, price } = product;
+import DeleteProductBtn from "./DeleteProductBtn";
+export default function Product({ product, fetchData, removeProduct, user }) {
+  const { name, slug, images, price, _id } = product;
 
   return (
     <article className="room">
@@ -12,6 +13,13 @@ export default function Product({ product }) {
         <div className="price-top">
           <h6>${price}</h6>
         </div>
+        {user ? (
+          <DeleteProductBtn
+            id={_id}
+            fetchData={fetchData}
+            removeProduct={removeProduct}
+          />
+        ) : null}
         <Link to={`/products/${slug}`} className="btn-primary room-link">
           Details
         </Link>

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 // import items from "./data";
 import axios from "axios";
 const ProductContext = React.createContext();
+
 //<ProductContext.Provider value={'hello'}
 
 class ProductProvider extends Component {
@@ -16,7 +17,8 @@ class ProductProvider extends Component {
     minPrice: 0,
     maxPrice: 0,
     minSize: 0,
-    maxSize: 0
+    maxSize: 0,
+    currentProduct: null
     // breakfast: false,
     //pets: false
   };
@@ -46,10 +48,16 @@ class ProductProvider extends Component {
     });
   };
 
-  getProduct = slug => {
-    let tempProducts = [...this.state.products];
-    const product = tempProducts.find(product => product.slug === slug);
-    return product;
+  getProduct = async slug => {
+    const res = await axios.get(`/api/product/${slug}`);
+    this.setState({
+      currentProduct: res.data
+    });
+  };
+
+  removeProduct = async id => {
+    await axios.delete(`/api/product/${id}`);
+    this.fetchData();
   };
 
   handleChange = event => {
@@ -127,7 +135,8 @@ class ProductProvider extends Component {
           ...this.state,
           getProduct: this.getProduct,
           handleChange: this.handleChange,
-          fetchData: this.fetchData
+          fetchData: this.fetchData,
+          removeProduct: this.removeProduct
         }}
       >
         {this.props.children}

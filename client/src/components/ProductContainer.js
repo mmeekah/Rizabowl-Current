@@ -9,7 +9,13 @@ import axios from "axios";
 import CreateProduct from "./CreateProduct";
 
 function ProductContainer({ context }) {
-  const { loading, sortedProducts, products, fetchData } = context;
+  const {
+    loading,
+    sortedProducts,
+    products,
+    fetchData,
+    removeProduct
+  } = context;
 
   const [creating, setCreating] = useState(false);
 
@@ -44,7 +50,12 @@ function ProductContainer({ context }) {
         />
       ) : null}
       <ProductFilter products={products} />
-      <ProductList products={sortedProducts} />
+      <ProductList
+        user={user}
+        products={sortedProducts}
+        fetchData={fetchData}
+        removeProduct={removeProduct}
+      />
       {user ? (
         <AddProductBtn setCreating={setCreating} creating={creating} />
       ) : null}

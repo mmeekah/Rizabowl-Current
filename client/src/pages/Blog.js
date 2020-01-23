@@ -4,8 +4,9 @@ import Banner from "../components/Banner";
 import { Link } from "react-router-dom";
 import Title from "../components/Title";
 import { ProductContext } from "../context";
-import blogDate from "../blog-data";
-import SingleBlog from "../components/SingleBlog";
+// import blogDate from "../blog-data";
+import BlogContainer from "../components/BlogContainer";
+// import SingleBlog from "../components/SingleBlog";
 import "../blog.css";
 
 const Blog = () => {
@@ -20,11 +21,8 @@ const Blog = () => {
       </Hero>
       <section className="featured-rooms" />
       <Title title="What We Do" />
-      <div className="blogs">
-        {blogDate.map(blog => (
-          <SingleBlog blog={blog} />
-        ))}
-      </div>
+      {/* <SingleBlog /> */}
+      <BlogContainer />
     </>
   );
 };

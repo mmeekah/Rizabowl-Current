@@ -52,7 +52,10 @@ export default function Login() {
               ></input>
             </div>
             <button className="btn-primary" type="submit">
-              login
+              log in
+            </button>
+            <button className="btn-primary" type="submit">
+              Log out
             </button>
           </form>
         </Banner>
