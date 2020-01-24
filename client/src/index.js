@@ -5,12 +5,15 @@ import { BrowserRouter as Router } from "react-router-dom";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { ProductProvider } from "./context";
+import { BlogProvider } from "./BlogContext";
 ReactDOM.render(
-  <ProductProvider>
-    <Router>
-      <App />
-    </Router>
-  </ProductProvider>,
+  <BlogProvider>
+    <ProductProvider>
+      <Router>
+        <App />
+      </Router>
+    </ProductProvider>
+  </BlogProvider>,
 
   document.getElementById("root")
 );

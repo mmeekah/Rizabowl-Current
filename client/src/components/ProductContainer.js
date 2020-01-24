@@ -9,6 +9,7 @@ import axios from "axios";
 import CreateProduct from "./CreateProduct";
 
 function ProductContainer({ context }) {
+  console.log(context);
   const {
     loading,
     sortedProducts,

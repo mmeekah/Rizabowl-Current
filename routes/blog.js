@@ -5,7 +5,7 @@ const Blog = require("../models/Blog");
 
 // Get all Posts
 router.get("/", async (req, res) => {
-  let posts = await Product.find();
+  let posts = await Blog.find();
   res.json(posts);
 });
 
@@ -25,8 +25,7 @@ router.post("/", async (req, res) => {
 // Remove existing Post
 router.delete("/:id", async (req, res) => {
   const id = req.params.id;
-
-  await Post.findByIdAndRemove(id);
+  await Blog.findByIdAndRemove(id);
   res.json(null);
 });
 

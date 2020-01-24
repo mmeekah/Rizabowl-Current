@@ -16,7 +16,6 @@ class BlogProvider extends Component {
 
   fetchBlogData = async () => {
     const res = await axios.get("api/blog");
-
     this.setState({
       posts: res.data,
       loading: false

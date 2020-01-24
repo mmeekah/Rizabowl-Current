@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import axios from "axios";
 
 import Home from "./pages/Home";
 import Products from "./pages/Products";
@@ -16,18 +17,39 @@ import Footer from "./components/Footer";
 import Login from "./login/Login";
 
 import CreateProduct from "./components/CreateProduct";
+import setAuthToken from "./utils/setAuthToken";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoggingActive: true
+      isLoggingActive: true,
+      user: null
     };
   }
 
-  render() {
-    const { isLoggingActive } = this.state;
+  removeUser = () => {
+    this.setState({
+      user: null
+    });
+  };
 
+  loadUser = async () => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setAuthToken(token);
+    }
+    const res = await axios.get("/api/user/load");
+    this.setState({ user: res.data });
+  };
+
+  componentDidMount() {
+    this.loadUser();
+  }
+
+  render() {
+    const { isLoggingActive, user } = this.state;
+    console.log(user);
     return (
       <>
         <Navbar />
@@ -38,7 +60,18 @@ class App extends React.Component {
           <Route exact path="/blog" component={Blog} />
           <Route exact path="/products" component={Products} />
           <Route exact path="/products/:slug" component={SingleProduct} />
-          <Route exact path="/login" component={Login} />
+          <Route
+            exact
+            path="/login"
+            render={props => (
+              <Login
+                {...props}
+                removeUser={this.removeUser}
+                user={this.state.user}
+                loadUser={this.loadUser}
+              />
+            )}
+          />
           <Route component={Error} />
         </Switch>
         <Footer />

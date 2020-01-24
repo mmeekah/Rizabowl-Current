@@ -3,10 +3,16 @@
   justify-content: space-between;
   margin: 0 200px;
   align-items: center;
+  position: relative;
 }
 
 .blogs .blog:nth-child(2n) {
   flex-direction: row-reverse;
+}
+
+.blogs .blog:nth-child(2n) .editBlogBtn {
+  left: 15px;
+  right: unset;
 }
 
 .blogs .blog .blog-image {
@@ -16,6 +22,7 @@
 .blogs .blog .blog-desc {
   text-align: center;
   padding: 0 100px;
+  width: 100%;
 }
 
 @media screen and (max-width: 1400px) {

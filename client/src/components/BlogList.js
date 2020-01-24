@@ -1,13 +1,14 @@
 import React from "react";
 import Post from "./Post";
+import "../blog.css";
 
 export default function BlogList({ posts, fetchBlogData, removePost, user }) {
   return (
-    <section className="roomslist">
-      <div className="roomslist-center">
+    <section>
+      <div className="blogs">
         {posts.map(item => {
           return (
-            <blog
+            <Post
               user={user}
               key={item._id}
               post={item}

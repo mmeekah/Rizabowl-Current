@@ -122,7 +122,7 @@ export default class extends Component {
     return (
       <>
         <StyledHero img={mainImg || this.state.defaultBcg}>
-          <Banner title={`${name} product`}>
+          <Banner title={`${name} `}>
             <Link to="/products" className="btn-primary">
               Back to Products
             </Link>
