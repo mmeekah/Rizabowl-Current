@@ -192,11 +192,16 @@ h6 {
 }
 
 .topbar__social {
-  line-height: 1;
+  /* line-height: 1;
   float: right;
   margin-right: 15px;
   text-align: right;
-  width: 20%;
+  width: 20%; */
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  align-items: center;
 }
 
 .topbar__social a:hover {
@@ -221,10 +226,10 @@ h6 {
   .topbar__format {
     width: auto;
   }
-  .topbar__social {
+  /* .topbar__social {
     width: auto;
     float: right;
-  }
+  } */
   .topbar__title {
     display: none;
   }
@@ -232,18 +237,40 @@ h6 {
 
 /* Navbar */
 .navbar {
-  position: relevant;
-  top: 0;
+  /* position: relative; */
+  background: transparent;
+  position: absolute;
+  top: 55px;
   left: 0;
   width: 100%;
   padding: 0.75rem 2rem;
-  background: var(--offWhite);
   z-index: 1;
 }
+
 .nav-header {
   display: flex;
   justify-content: space-between;
 }
+
+@media (max-width: 765px) {
+  .nav-header img {
+    display: none;
+  }
+
+  .nav-center {
+    width: 100%;
+  }
+  .navbar .show-nav {
+    background: var(--mainGrey);
+    width: 100%;
+  }
+
+  .nav-links a:hover {
+    transform: scale(1.2);
+    color: var(--primaryColor);
+  }
+}
+
 .nav-btn {
   background: transparent;
   border: none;
@@ -251,10 +278,12 @@ h6 {
   outline: none;
 }
 .nav-icon {
-  font-size: 1.9rem;
-  color: var(--primaryColor);
+  font-size: 1.3rem;
+  color: var(--offWhite);
+  float: right;
 }
 .nav-links {
+  background: transparent;
   height: 0;
   overflow: hidden;
   transition: var(--mainTransition);
@@ -264,23 +293,25 @@ h6 {
   display: block;
   text-decoration: none;
   padding: 1rem 0;
-  color: var(--mainBlack);
+  color: var(--primaryColor);
   transition: var(--mainTransition);
   text-align: center;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: bold;
   letter-spacing: var(--mainSpacing);
 }
 .nav-links a:hover {
-  color: var(--primaryColor);
+  color: var(--mainWhite);
+  transform: scale(1.1);
 }
 
 .show-nav {
-  height: 330px;
+  height: 280px;
+  width: max-content;
 }
 @media screen and (min-width: 768px) {
   .nav-btn {
-    display: none;
+    /* display: none; */
   }
   .nav-center {
     max-width: 1170px;
@@ -306,6 +337,7 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 .homeHero {
   background-image: url("./images/defaultBcg.jpeg");
@@ -313,16 +345,14 @@ h6 {
 }
 
 .roomsHero {
-  min-height: calc(100vh - 66px);
+  /* min-height: calc(100vh - 66px); */
+  min-height: 60vh;
   background: url("./images/products-hero.jpeg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.roomsHero {
-  background-image: url("./images/products-hero.jpeg");
-  min-height: 60vh;
-}
+
 .aboutHero {
   min-height: calc(100vh - 66px);
   background: url("./images/about-hero.jpeg") center/cover no-repeat;
@@ -662,6 +692,7 @@ h6 {
     padding-left: 3rem;
   }
 }
+
 /* end of single room*/
 /* roomlist */
 .roomslist {
@@ -760,7 +791,7 @@ h6 {
   margin: 0;
   font-size: 14px;
   color: #666;
-  letter-spacing: 0.1em;
+  /* letter-spacing: 0.1em; */
 }
 
 .footer-heading {
@@ -783,7 +814,7 @@ h6 {
   font-size: 30px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.5em;
+  letter-spacing: 0.3em;
   color: #e5e5e5;
   font-family: "Dosis", Arial, "Helvetica Neue", sans-serif;
 }
@@ -847,6 +878,24 @@ h6 {
   width: 100%;
 }
 
+@media screen and (min-width: 776px) {
+  .footer-company {
+    width: 70vw;
+  }
+}
+@media screen and (min-width: 992px) {
+  .filter-form {
+    width: 95vw;
+    max-width: 1170px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .footer {
+    text-align: center;
+  }
+}
+
 /* End of Footer */
 /* Login Style */
 
@@ -855,3 +904,7 @@ h6 {
   letter-spacing: 0.1rem;
 }
 /* En of Login Style */
+
+.about-info {
+  padding: 1.5rem;
+}

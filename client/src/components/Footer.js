@@ -14,7 +14,7 @@ export default function Footer() {
       <div className="footer-wrapper">
         <div className="container">
           <div className="row justify-content-center">
-            <div className="col-md-4 col-sm-6">
+            <div className="col-lg-4 col-md-6 col-sm-6">
               <div className="footer-company">
                 <div className="company-logo">
                   <Link to="/">Rizabowl</Link>
@@ -35,7 +35,7 @@ export default function Footer() {
                 </ul>
               </div>
             </div>
-            <div className="col-md-2 col-sm-3">
+            <div className="col-lg-2 col-sm-3 col-sm-3">
               <div className="footer-link">
                 <div className="footer-heading">
                   <h3>Link</h3>
@@ -53,7 +53,7 @@ export default function Footer() {
                 </ul>
               </div>
             </div>
-            <div className="col-md-4 col-sm-12">
+            <div className="col-lg-4 col-md-12 col-sm-12">
               <div className="footer-ins">
                 <div className="footer-heading">
                   <h3>Instagram</h3>

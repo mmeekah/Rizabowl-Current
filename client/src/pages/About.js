@@ -23,7 +23,7 @@ const About = () => {
               {/* <div className="single-room-images"> */}
               <img src={aboutAuth} className="single-room-image"></img>
               {/* </div> */}
-              <p>
+              <p className="about-info">
                 Aenean at massa et mauris feugiat ultricies quis sed felis.
                 Fusce felis ex, ullamcorper at fringilla ut, commodo et dolor.
                 Nulla nec nibh orci. Nulla et sagittis lacus. Proin scelerisque

@@ -18,10 +18,9 @@ export default class Navbar extends Component {
           <div className="topbar__wrapper">
             <div>
               <div className="topbar__inner">
-                <div className="topbar__social ml-5">
+                <div className="topbar__social">
                   <div>
                     <a
-                      target="_blank"
                       href="https://www.instagram.com/rizabowl/"
                       className="text-light"
                     >
@@ -40,6 +39,13 @@ export default class Navbar extends Component {
                       <i className="fas fa-user text-light ml-2"></i>
                     </Link>
                   </div>
+                  <button
+                    type="button"
+                    className="nav-btn"
+                    onClick={this.handleToggle}
+                  >
+                    <FaAlignRight className="nav-icon " />
+                  </button>
                 </div>
 
                 {/* <div className="shopcart js-shop-cart">
@@ -54,21 +60,16 @@ export default class Navbar extends Component {
 
         <nav className="navbar">
           <div className="nav-center">
-            <div className="nav-header">
-              <Link to="/">
-                <img src={logo} alt="Rizabowl" width="40px" />
-              </Link>
-              <button
-                type="button"
-                className="nav-btn"
-                onClick={this.handleToggle}
-              >
-                <FaAlignRight className="nav-icon" />
-              </button>
-            </div>
+            <div className="nav-header"></div>
             <ul
               className={this.state.isOpen ? "nav-links show-nav" : "nav-links"}
             >
+              <li>
+                <Link to="/">
+                  R I Z A B O W L
+                  {/* <img src={logo} alt="Rizabowl" width="40px" /> */}
+                </Link>
+              </li>
               <li>
                 <Link to="/">HOME</Link>
               </li>
