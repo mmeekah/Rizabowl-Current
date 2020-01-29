@@ -106,7 +106,14 @@ export default function CreateProduct({ fetchData, setCreating, creating }) {
                 value={product.count}
                 onChange={handleChange}
               ></input>
+
+              <div>
+                <input type="file" />
+
+                <button>Upload</button>
+              </div>
             </div>
+
             <button className="btn-primary" type="submit">
               Add Product
             </button>
