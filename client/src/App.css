@@ -305,6 +305,17 @@ h6 {
   transform: scale(1.1);
 }
 
+.product-image-container {
+  position: relative;
+}
+
+.product-image-container button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+}
+
 .show-nav {
   height: 280px;
   width: max-content;
@@ -347,7 +358,7 @@ h6 {
 .roomsHero {
   /* min-height: calc(100vh - 66px); */
   min-height: 60vh;
-  background: url("./images/products-hero.jpeg") center/cover no-repeat;
+  background: url("./images/room-1.jpeg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;

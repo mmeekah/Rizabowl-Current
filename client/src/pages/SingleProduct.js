@@ -7,6 +7,7 @@ import { ProductContext } from "../context";
 import StyledHero from "../components/StyledHero";
 import axios from "axios";
 import setAuthToken from "../utils/setAuthToken";
+import DeleteImageBtn from "../components/DeleteImageBtn";
 
 export default class extends Component {
   constructor(props) {
@@ -27,10 +28,20 @@ export default class extends Component {
         // extras,
         // breakfast,
         // pets,
-        images: []
+        image1: null,
+        image2: null,
+        image3: null
       }
     };
   }
+
+  loadProduct = async () => {
+    const { getProduct } = this.context;
+    await getProduct(this.state.slug);
+    this.setState({
+      product: this.context.currentProduct
+    });
+  };
 
   componentDidMount() {
     const loadUser = async () => {
@@ -46,15 +57,8 @@ export default class extends Component {
         console.log(error);
       }
     };
-    const loadProduct = async () => {
-      const { getProduct } = this.context;
-      await getProduct(this.state.slug);
-      this.setState({
-        product: this.context.currentProduct
-      });
-    };
     loadUser();
-    loadProduct();
+    this.loadProduct();
   }
 
   removeCurrentProduct = () => {
@@ -115,13 +119,14 @@ export default class extends Component {
       // extras,
       // breakfast,
       // pets,
-      images
+      image1,
+      image2,
+      image3
     } = this.state.product;
 
-    const [mainImg, ...defaultImg] = images;
     return (
       <>
-        <StyledHero img={mainImg || this.state.defaultBcg}>
+        <StyledHero img={this.state.defaultBcg}>
           <Banner title={`${name} `}>
             <Link to="/products" className="btn-primary">
               Back to Products
@@ -131,9 +136,57 @@ export default class extends Component {
 
         <section className="single-room">
           <div className="single-room-images">
-            {defaultImg.map((item, index) => {
-              return <img key={index} src={item} alt={name} />;
-            })}
+            {image1 && (
+              <div className="product-image-container">
+                <img
+                  src={`data:${image1.mimeType};base64,${new Buffer(
+                    image1.data
+                  ).toString("base64")}`}
+                  alt="image1"
+                />
+                {editing ? (
+                  <DeleteImageBtn
+                    id={_id}
+                    imageNumber={"image1"}
+                    loadProduct={this.loadProduct}
+                  />
+                ) : null}
+              </div>
+            )}
+            {image2 && (
+              <div className="product-image-container">
+                <img
+                  src={`data:${image2.mimeType};base64,${new Buffer(
+                    image2.data
+                  ).toString("base64")}`}
+                  alt="image1"
+                />
+                {editing ? (
+                  <DeleteImageBtn
+                    id={_id}
+                    imageNumber={"image2"}
+                    loadProduct={this.loadProduct}
+                  />
+                ) : null}
+              </div>
+            )}
+            {image3 && (
+              <div className="product-image-container">
+                <img
+                  src={`data:${image3.mimeType};base64,${new Buffer(
+                    image3.data
+                  ).toString("base64")}`}
+                  alt="image1"
+                />
+                {editing ? (
+                  <DeleteImageBtn
+                    id={_id}
+                    imageNumber={"image3"}
+                    loadProduct={this.loadProduct}
+                  />
+                ) : null}
+              </div>
+            )}
           </div>
 
           <form onSubmit={this.finishEditing}>
@@ -197,7 +250,9 @@ export default class extends Component {
               {editing ? (
                 <>
                   <button type="submit">Submit</button>
-                  <button type="button">Cancel</button>
+                  <button type="button" onClick={this.editCurrentProduct}>
+                    Cancel
+                  </button>
                 </>
               ) : null}
               {user ? (
@@ -207,7 +262,7 @@ export default class extends Component {
                     type="button"
                     onClick={this.removeCurrentProduct}
                   >
-                    <i className="fas fa-times"> </i>
+                    <i class="far fa-trash-alt"></i>
                   </button>
 
                   <button

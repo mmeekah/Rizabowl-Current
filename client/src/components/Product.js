@@ -4,12 +4,21 @@ import defaultImg from "../images/room-1.jpeg";
 import PropTypes from "prop-types";
 import DeleteProductBtn from "./DeleteProductBtn";
 export default function Product({ product, fetchData, removeProduct, user }) {
-  const { name, slug, images, price, _id } = product;
+  const { name, slug, image1, price, _id } = product;
 
   return (
     <article className="room">
       <div className="img-container">
-        <img src={images[0] || defaultImg} alt="single product" />
+        <img
+          src={
+            image1
+              ? `data:${image1.mimeType};base64,${new Buffer(
+                  image1.data
+                ).toString("base64")}`
+              : defaultImg
+          }
+          alt="single product"
+        />
         <div className="price-top">
           <h6>${price}</h6>
         </div>

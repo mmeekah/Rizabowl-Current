@@ -7,7 +7,9 @@ const ProductSchema = mongoose.Schema({
   size: { type: Number, required: true },
   capacity: { type: Number, required: true },
   description: { type: String, required: true },
-  images: { type: Array, default: [] },
+  image1: { type: mongoose.Schema.Types.ObjectId, ref: "images" },
+  image2: { type: mongoose.Schema.Types.ObjectId, ref: "images" },
+  image3: { type: mongoose.Schema.Types.ObjectId, ref: "images" },
   featured: { type: Boolean, default: false }
 });
 

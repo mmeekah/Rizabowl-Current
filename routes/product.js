@@ -1,17 +1,21 @@
 // import express, Router, Product
 const express = require("express");
 const router = express.Router();
+
 const Product = require("../models/Product");
 
 // Get all products
 router.get("/", async (req, res) => {
-  let products = await Product.find();
+  let products = await Product.find().populate("image1");
   res.json(products);
 });
 
 // Get single product
 router.get("/:slug", async (req, res) => {
-  let product = await Product.findOne({ slug: req.params.slug });
+  let product = await Product.findOne({ slug: req.params.slug })
+    .populate("image1")
+    .populate("image2")
+    .populate("image3");
   res.json(product);
 });
 
