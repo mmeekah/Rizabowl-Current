@@ -62,10 +62,8 @@ export default class extends Component {
   }
 
   removeCurrentProduct = () => {
-    const { removeProduct, getProduct } = this.context;
-    const product = getProduct(this.state.slug);
-    const { _id } = product;
-    removeProduct(_id);
+    const { removeProduct } = this.context;
+    removeProduct(this.state.product._id);
     this.props.history.push("/products");
   };
   editCurrentProduct = () => {

@@ -50,7 +50,7 @@ class ProductProvider extends Component {
 
   getProduct = async slug => {
     const res = await axios.get(`/api/product/${slug}`);
-    this.setState({
+    await this.setState({
       currentProduct: res.data
     });
   };

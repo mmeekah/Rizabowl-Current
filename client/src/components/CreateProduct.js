@@ -67,7 +67,7 @@ export default function CreateProduct({ fetchData, setCreating, creating }) {
   }, [product.slug]);
 
   return (
-    <>
+    <div id="creatingProduct">
       <Hero hero="createHero">
         <Banner title="Create Product">
           <form className="form" onSubmit={handleSubmit}>
@@ -183,6 +183,6 @@ export default function CreateProduct({ fetchData, setCreating, creating }) {
           </form>
         </Banner>
       </Hero>
-    </>
+    </div>
   );
 }

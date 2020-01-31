@@ -6,11 +6,12 @@ import setAuthToken from "../utils/setAuthToken";
 import axios from "axios";
 import CreatePost from "./CreatePost";
 import BlogList from "./BlogList";
+import DeleteImageBtn from "../components/DeleteImageBtn";
 
 function BlogContainer({ context }) {
   const { fetchBlogData, removePost, posts } = context;
   const [creating, setCreating] = useState(false);
-
+  // const { user, editing } = state;
   const [user, setUser] = useState("");
 
   useEffect(() => {
@@ -84,6 +85,13 @@ function BlogContainer({ context }) {
           creating={creating}
         />
       ) : null}
+      {/* {editing ? ( 
+        <DeleteImageBtn
+           id={_id}
+           image={"image2"}
+           loadProduct={this.loadProduct}
+         />
+       ) : null} */}
 
       <BlogList
         user={user}

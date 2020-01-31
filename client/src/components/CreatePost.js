@@ -11,6 +11,8 @@ const INITIAL_POST = {
 
 export default function CreatePost({ fetchBlogData, setCreating, creating }) {
   const [post, setPost] = useState(INITIAL_POST);
+  const [image, setImage] = useState(null);
+
   function handleChange(event) {
     const { name, value } = event.target;
     setPost(prevState => ({ ...prevState, [name]: value }));
@@ -18,11 +20,22 @@ export default function CreatePost({ fetchBlogData, setCreating, creating }) {
 
   async function handleSubmit(event) {
     event.preventDefault();
-
-    await axios.post("/api/blog", post);
+    const res = await axios.post("/api/blog", post);
+    handleUpload(res.data._id);
     fetchBlogData();
     setCreating(!creating);
   }
+
+  const handleUpload = async id => {
+    const formData = new FormData();
+    formData.append("file", image);
+
+    await axios.post(`/api/image/blog/${id}`, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data"
+      }
+    });
+  };
 
   return (
     <>
@@ -52,7 +65,14 @@ export default function CreatePost({ fetchBlogData, setCreating, creating }) {
                 onChange={handleChange}
               ></input>
             </div>
-
+            <div className="form-group">
+              <label htmlFor="image">Upload Blog Image</label>
+              <input
+                id="image"
+                type="file"
+                onChange={e => setImage(e.target.files[0])}
+              />
+            </div>
             <button className="btn-primary" type="submit">
               Add Post
             </button>

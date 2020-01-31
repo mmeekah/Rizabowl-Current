@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import Hero from "../components/Hero";
+import Banner from "../components/Banner";
 import ProductFilter from "./ProductFilter";
 import ProductList from "./ProductList";
 import { withProductConsumer } from "../context";
@@ -7,6 +9,7 @@ import AddProductBtn from "./AddProductBtn";
 import setAuthToken from "../utils/setAuthToken";
 import axios from "axios";
 import CreateProduct from "./CreateProduct";
+import { HashLink as Link } from "react-router-hash-link";
 
 function ProductContainer({ context }) {
   console.log(context);
@@ -21,6 +24,11 @@ function ProductContainer({ context }) {
   const [creating, setCreating] = useState(false);
 
   const [user, setUser] = useState("");
+
+  const goToForm = () => {
+    if (creating) {
+    }
+  };
 
   useEffect(() => {
     const loadUser = async () => {
@@ -43,6 +51,15 @@ function ProductContainer({ context }) {
 
   return (
     <>
+      {creating ? null : (
+        <Hero hero="roomsHero">
+          <Banner title="Our Products">
+            <Link to="/" className="btn-primary">
+              return home
+            </Link>
+          </Banner>
+        </Hero>
+      )}
       {creating ? (
         <CreateProduct
           fetchData={fetchData}
@@ -58,7 +75,9 @@ function ProductContainer({ context }) {
         removeProduct={removeProduct}
       />
       {user ? (
-        <AddProductBtn setCreating={setCreating} creating={creating} />
+        <Link to="/products#creatingProduct">
+          <AddProductBtn setCreating={setCreating} creating={creating} />
+        </Link>
       ) : null}
     </>
   );

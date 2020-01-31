@@ -7,10 +7,11 @@ import "../blog.css";
 import axios from "axios";
 
 export default function Post({ post, fetchBlogData, removePost, user }) {
-  const { title, images, _id } = post;
+  const { title, image, _id } = post;
   const [editing, setEditing] = useState(false);
   const [titleField, setTitleField] = useState(post.title);
   const [postField, setPostField] = useState(post.post);
+  const [imageField, setImageField] = useState(post.image);
 
   const startEditingBlog = () => {
     setEditing(!editing);
@@ -19,6 +20,7 @@ export default function Post({ post, fetchBlogData, removePost, user }) {
   const handleCancel = () => {
     setTitleField(post.title);
     setPostField(post.post);
+    setImageField(post.image);
     setEditing(!editing);
   };
 
@@ -46,15 +48,24 @@ export default function Post({ post, fetchBlogData, removePost, user }) {
       _id,
       title: titleField,
       post: postField,
-      images
+      image
     });
 
     setEditing(!editing);
   };
 
+  // const { image } = this.state.post;
+
   return (
     <div className="blog">
-      <img src={images[0] || defaultImg} alt="single product" />
+      {image ? (
+        <img
+          src={`data:${image.mimeType};base64,${new Buffer(image.data).toString(
+            "base64"
+          )}`}
+          alt="image"
+        />
+      ) : null}
       <div className="blog-desc">
         {user ? (
           <button className="editBlogBtn" onClick={startEditingBlog}>
