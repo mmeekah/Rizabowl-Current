@@ -8,7 +8,7 @@ async function connectDB() {
     const username = process.env.MLAB_USERNAME;
     const password = process.env.MLAB_PASSWORD;
 
-    let connection = `mongodb://${username}: ${password}${db}`;
+    let connection = `mongodb://${username}:${password}${db}`;
     await mongoose.connect(connection, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
