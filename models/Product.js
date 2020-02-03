@@ -4,7 +4,7 @@ const ProductSchema = mongoose.Schema({
   slug: { type: String, required: true },
   type: { type: String, required: true },
   price: { type: Number, required: true },
-  size: { type: Number, required: true },
+  size: { type: Number, required: false },
   capacity: { type: Number, required: true },
   description: { type: String, required: true },
   image1: { type: mongoose.Schema.Types.ObjectId, ref: "images" },

@@ -228,7 +228,7 @@ export default class extends Component {
                   ) : (
                     size
                   )}
-                  IN.
+                  CM.
                 </h6>
                 <h6>
                   count:{" "}

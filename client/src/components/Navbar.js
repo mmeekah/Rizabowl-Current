@@ -32,11 +32,14 @@ export default class Navbar extends Component {
                     >
                       <i className="fab fa-facebook-f"></i>
                     </a>
-                    <a href="https://www.pinterest.com/justinablakeney/ceramics-pottery/">
-                      <i className="fab fa-pinterest text-light" />
+                    <a
+                      href="https://www.pinterest.com/justinablakeney/ceramics-pottery/"
+                      className="text-light"
+                    >
+                      <i className="fab fa-pinterest " />
                     </a>
-                    <Link to="/login">
-                      <i className="fas fa-user text-light ml-2"></i>
+                    <Link to="/login" className="text-light">
+                      <i className="fas fa-user  ml-2"></i>
                     </Link>
                   </div>
                   <button
@@ -75,6 +78,11 @@ export default class Navbar extends Component {
               </li>
               <li>
                 <Link to="/products">PRODUCTS</Link>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/rizabowl/" target="_blank">
+                  SHOP
+                </a>
               </li>
 
               <li>

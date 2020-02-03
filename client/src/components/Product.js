@@ -17,6 +17,8 @@ export default function Product({ product, fetchData, removeProduct, user }) {
                 ).toString("base64")}`
               : defaultImg
           }
+          height="270"
+          width="120"
           alt="single product"
         />
         <div className="price-top">

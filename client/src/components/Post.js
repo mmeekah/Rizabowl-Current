@@ -89,11 +89,24 @@ export default function Post({ post, fetchBlogData, removePost, user }) {
               className="form-control"
               rows="4"
             />
-            <button type="submit">Submit</button>
-            <button type="button" onClick={handleCancel}>
+            <button
+              type="submit"
+              className=" btn .btn-sm btn-outline-secondary"
+            >
+              Submit
+            </button>
+            <button
+              type="button"
+              className=" btn .btn-sm btn-outline-secondary"
+              onClick={handleCancel}
+            >
               Cancel
             </button>
-            <button type="button" onClick={removeCurrentPost}>
+            <button
+              type="button"
+              className=" btn .btn-sm btn-outline-secondary"
+              onClick={removeCurrentPost}
+            >
               Delete
             </button>
           </form>

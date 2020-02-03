@@ -104,15 +104,16 @@ export default function CreateProduct({ fetchData, setCreating, creating }) {
             </div>
             <div className="form-group">
               <label htmlFor="description">Description</label>
-              <input
+              <textarea
                 type="text"
                 name="description"
                 label="Description"
+                rows="5"
                 placeholder="Description"
                 className="input"
                 value={product.description}
                 onChange={handleChange}
-              ></input>
+              ></textarea>
             </div>
 
             <div className="form-group">
@@ -150,6 +151,7 @@ export default function CreateProduct({ fetchData, setCreating, creating }) {
             <div className="form-group">
               <label htmlFor="image1">Image One (Cover Image)</label>
               <input
+                className="btn btn-primary btn-sm float-left"
                 id="image1"
                 type="file"
                 onChange={e => {
@@ -160,6 +162,7 @@ export default function CreateProduct({ fetchData, setCreating, creating }) {
             <div className="form-group">
               <label htmlFor="image2">Image Two</label>
               <input
+                className="btn btn-primary btn-sm float-left"
                 id="image2"
                 type="file"
                 onChange={e => {
@@ -170,6 +173,7 @@ export default function CreateProduct({ fetchData, setCreating, creating }) {
             <div className="form-group">
               <label htmlFor="image3">Image Three</label>
               <input
+                className="btn btn-primary btn-sm float-left"
                 id="image3"
                 type="file"
                 onChange={e => {

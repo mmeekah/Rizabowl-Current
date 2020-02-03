@@ -7,6 +7,7 @@ import axios from "axios";
 import CreatePost from "./CreatePost";
 import BlogList from "./BlogList";
 import DeleteImageBtn from "../components/DeleteImageBtn";
+import { HashLink as Link } from "react-router-hash-link";
 
 function BlogContainer({ context }) {
   const { fetchBlogData, removePost, posts } = context;
@@ -100,13 +101,13 @@ function BlogContainer({ context }) {
         posts={posts}
       />
       {user ? (
-        <>
+        <Link to="/blog#postForm">
           <AddProductBtn setCreating={setCreating} creating={creating} />
 
           {/* <button className="editBtn" onClick={editCurrentPost}>
             <i className="fas fa-pen"> </i>
           </button> */}
-        </>
+        </Link>
       ) : null}
     </>
   );

@@ -4,6 +4,7 @@ import Banner from "../components/Banner";
 import { Link } from "react-router-dom";
 import Title from "../components/Title";
 import aboutAuth from "../images/about-author.jpg";
+import signature from "../images/signature.png";
 
 const About = () => {
   return (
@@ -42,6 +43,9 @@ const About = () => {
                 platea dictumst. Pellentesque ornare felis lectus. Maecenas eros
                 dui, iaculis in enim quis, auctor eleifend sem. Pellentesque
                 iaculis ante non ultrices varius.
+                <div className="img-center ">
+                  <img src={signature}></img>
+                </div>
               </p>
             </div>
           </article>

@@ -265,6 +265,10 @@ h6 {
     width: 100%;
   }
 
+  .nav-btn {
+    visibility: visible;
+  }
+
   .nav-links a:hover {
     transform: scale(1.2);
     color: var(--primaryColor);
@@ -276,11 +280,16 @@ h6 {
   border: none;
   cursor: pointer;
   outline: none;
+  /* visibility: hidden; */
 }
 .nav-icon {
   font-size: 1.3rem;
   color: var(--offWhite);
   float: right;
+}
+
+.nav-icon .FaAlignRight hover {
+  color: var(--primaryColor);
 }
 .nav-links {
   background: transparent;
@@ -317,12 +326,12 @@ h6 {
 }
 
 .show-nav {
-  height: 280px;
+  height: 350px;
   width: max-content;
 }
 @media screen and (min-width: 768px) {
   .nav-btn {
-    /* display: none; */
+    display: none;
   }
   .nav-center {
     max-width: 1170px;
@@ -519,12 +528,14 @@ h6 {
   padding: 5rem 0;
 }
 .featured-rooms-center {
+  /* height: 270px; */
   width: 80vw;
+
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  grid-row-gap: 2rem;
-  grid-column-gap: 40px;
+  grid-row-gap: 3rem;
+  grid-column-gap: 70px;
 }
 @media screen and (min-width: 776px) {
   .featured-rooms-center {
@@ -751,6 +762,7 @@ h6 {
   margin-bottom: 0.5rem;
 }
 .form-control {
+  margin-bottom: 20px;
   width: 100%;
   background: transparent;
   font-size: 1rem;
@@ -918,4 +930,11 @@ h6 {
 
 .about-info {
   padding: 1.5rem;
+}
+.img-center {
+  display: block;
+  margin-top: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
 }

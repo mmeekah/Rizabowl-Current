@@ -41,7 +41,7 @@ export default function CreatePost({ fetchBlogData, setCreating, creating }) {
     <>
       <Hero hero="createHero">
         <Banner title="Create Blog Post">
-          <form className="form" onSubmit={handleSubmit}>
+          <form className="form" onSubmit={handleSubmit} id="postForm">
             <div className="form-group">
               <label htmlFor="name">Title</label>
               <input
@@ -54,22 +54,26 @@ export default function CreatePost({ fetchBlogData, setCreating, creating }) {
               ></input>
 
               <label htmlFor="post">Post</label>
-              <input
-                className="form"
+              <textarea
+                className="form "
                 type="text"
                 name="post"
                 label="Post"
+                rows="10"
                 placeholder="Your post here..."
                 className="input"
                 value={post.post}
                 onChange={handleChange}
-              ></input>
+              ></textarea>
             </div>
             <div className="form-group">
               <label htmlFor="image">Upload Blog Image</label>
               <input
+                className="btn btn-primary btn-sm float-left"
                 id="image"
                 type="file"
+                height="480"
+                width="480"
                 onChange={e => setImage(e.target.files[0])}
               />
             </div>

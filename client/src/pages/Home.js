@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Hero className="homeHero">
-        <Banner title="new collection" subtitle="2020 resolutions">
+        <Banner title="new collection" subtitle="Spring 2020">
           <Link to="/products" className="btn-primary">
             our products
           </Link>

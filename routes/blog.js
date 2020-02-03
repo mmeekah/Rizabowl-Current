@@ -5,13 +5,13 @@ const Blog = require("../models/Blog");
 
 // Get all Posts
 router.get("/", async (req, res) => {
-  let posts = await Blog.find();
+  let posts = await Blog.find().populate("image");
   res.json(posts);
 });
 
 // Get single Post
 router.get("/:id", async (req, res) => {
-  let post = await Blog.findOne({ id: req.params._id });
+  let post = await Blog.findOne({ id: req.params._id }).populate("image");
   res.json(post);
 });
 

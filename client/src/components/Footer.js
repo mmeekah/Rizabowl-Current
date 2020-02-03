@@ -30,7 +30,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <i className="fa fa-envelope" />
-                    <span>ameekah92@gmail.com</span>
+                    <span>ameekah93@gmail.com</span>
                   </li>
                 </ul>
               </div>
