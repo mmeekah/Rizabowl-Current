@@ -1,4 +1,4 @@
 {
   "mongo": "@ds061681.mlab.com:61681/heroku_qm75npnk",
-  "jwrSecret": "meekahrizabowl"
+  "jwtSecret": "meekahrizabowl"
 }
