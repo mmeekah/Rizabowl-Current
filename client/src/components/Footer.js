@@ -45,7 +45,12 @@ export default function Footer() {
                     <Link to="/about"> About </Link>
                   </li>
                   <li>
-                    <a href="https://www.instagram.com/rizabowl/">Shop</a>
+                    <a
+                      href="https://www.instagram.com/rizabowl/"
+                      target="_blank"
+                    >
+                      Shop
+                    </a>
                   </li>
                   <li>
                     <Link to="/blog">Blog</Link>

@@ -43,7 +43,7 @@ const About = () => {
                 platea dictumst. Pellentesque ornare felis lectus. Maecenas eros
                 dui, iaculis in enim quis, auctor eleifend sem. Pellentesque
                 iaculis ante non ultrices varius.
-                <div className="img-center ">
+                <div className="about-img ">
                   <img src={signature}></img>
                 </div>
               </p>

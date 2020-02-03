@@ -6,11 +6,15 @@ import { Link } from "react-router-dom";
 const Carousel = () => {
   return (
     <>
-      <Hero hero="aboutHero">
+      <Hero hero="carouselHero">
         <Banner title=" Ceramics for Slow Life">
-          <Link to="/" className="btn-primary">
+          <a
+            href="https://www.instagram.com/rizabowl/"
+            target="_blank"
+            className="btn-primary"
+          >
             Shop Now
-          </Link>
+          </a>
         </Banner>
       </Hero>
     </>

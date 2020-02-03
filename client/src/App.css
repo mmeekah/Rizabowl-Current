@@ -384,6 +384,19 @@ h6 {
   background-image: url("./images/about-hero.jpeg");
   min-height: 60vh;
 }
+
+.carouselHero {
+  min-height: calc(100vh - 66px);
+  background: url("./images/horizontal.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.carouselHero {
+  background-image: url("./images/horizontal.jpg");
+}
 .blogHero {
   min-height: calc(100vh - 66px);
   background: url("./images/blog.jpeg") center/cover no-repeat;
@@ -931,10 +944,21 @@ h6 {
 .about-info {
   padding: 1.5rem;
 }
-.img-center {
+.about-img {
   display: block;
   margin-top: 1.5rem;
   margin-left: auto;
   margin-right: auto;
   width: 10%;
+}
+
+@media screen and (max-width: 576px) {
+  .about-info {
+    width: 90vw;
+  }
+
+  .about-img {
+    width: 90vw;
+    display: block;
+  }
 }
