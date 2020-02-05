@@ -1,5 +1,4 @@
 import React from "react";
-import { ProductContext } from "../context";
 
 export default function DeleteProductBtn({ id, removeProduct }) {
   //   const update = async e => {

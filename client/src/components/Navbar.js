@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import logo from "../images/logo.png";
+// import logo from "../images/logo.png";
 import { FaAlignRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -23,18 +23,24 @@ export default class Navbar extends Component {
                     <a
                       href="https://www.instagram.com/rizabowl/"
                       className="text-light"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <i className="fab fa-instagram" />
                     </a>
                     <a
                       href="https://www.facebook.com/"
                       className="mx-2 text-light"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <i className="fab fa-facebook-f"></i>
                     </a>
                     <a
                       href="https://www.pinterest.com/justinablakeney/ceramics-pottery/"
                       className="text-light"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <i className="fab fa-pinterest " />
                     </a>
@@ -80,7 +86,11 @@ export default class Navbar extends Component {
                 <Link to="/products">PRODUCTS</Link>
               </li>
               <li>
-                <a href="https://www.instagram.com/rizabowl/" target="_blank">
+                <a
+                  href="https://www.instagram.com/rizabowl/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   SHOP
                 </a>
               </li>

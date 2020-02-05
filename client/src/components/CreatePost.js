@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Hero from "../components/Hero";
 import Banner from "../components/Banner";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 import axios from "axios";
 
 const INITIAL_POST = {
@@ -55,13 +55,12 @@ export default function CreatePost({ fetchBlogData, setCreating, creating }) {
 
               <label htmlFor="post">Post</label>
               <textarea
-                className="form "
+                className="form input-desc "
                 type="text"
                 name="post"
                 label="Post"
                 rows="10"
                 placeholder="Your post here..."
-                className="input"
                 value={post.post}
                 onChange={handleChange}
               ></textarea>

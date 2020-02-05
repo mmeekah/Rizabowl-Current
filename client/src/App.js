@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./App.css";
 
 import axios from "axios";
@@ -17,7 +17,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Login from "./login/Login";
 
-import CreateProduct from "./components/CreateProduct";
+// import CreateProduct from "./components/CreateProduct";
 import setAuthToken from "./utils/setAuthToken";
 
 class App extends React.Component {
@@ -49,8 +49,8 @@ class App extends React.Component {
   }
 
   render() {
-    const { isLoggingActive, user } = this.state;
-    console.log(user);
+    // const { isLoggingActive, user } = this.state;
+    // console.log(user);
     return (
       <>
         <Navbar />

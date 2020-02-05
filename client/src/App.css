@@ -567,6 +567,7 @@ h6 {
 .room {
   box-shadow: var(--lightShadow);
   transition: var(--mainTransition);
+  width: 270px;
 }
 .room:hover {
   box-shadow: var(--darkShadow);
@@ -576,10 +577,12 @@ h6 {
   position: relative;
 }
 .img-container img {
+  height: 270px;
   width: 100%;
   display: block;
   transition: var(--mainTransition);
 }
+
 .price-top {
   position: absolute;
   top: 0;
@@ -654,6 +657,10 @@ h6 {
 }
 /* end of room  */
 /* single room*/
+
+.single-room-image {
+  max-width: 80vw;
+}
 
 .single-room {
   padding: 5rem 0 0 0;
@@ -938,7 +945,16 @@ h6 {
 .input {
   text-align: center;
   letter-spacing: 0.1rem;
+  border-radius: 10px;
 }
+
+.input-desc {
+  text-align: center;
+  letter-spacing: 0.1rem;
+  border-radius: 10px;
+  width: 400px;
+}
+
 /* En of Login Style */
 
 .about-info {

@@ -22,7 +22,11 @@ const About = () => {
           <article className="desc">
             <div className="single-room-info">
               {/* <div className="single-room-images"> */}
-              <img src={aboutAuth} className="single-room-image"></img>
+              <img
+                src={aboutAuth}
+                alt="AboutAuth"
+                className="single-room-image"
+              ></img>
               {/* </div> */}
               <p className="about-info">
                 Aenean at massa et mauris feugiat ultricies quis sed felis.
@@ -43,10 +47,10 @@ const About = () => {
                 platea dictumst. Pellentesque ornare felis lectus. Maecenas eros
                 dui, iaculis in enim quis, auctor eleifend sem. Pellentesque
                 iaculis ante non ultrices varius.
-                <div className="about-img ">
-                  <img src={signature}></img>
-                </div>
               </p>
+              <div className="about-img ">
+                <img src={signature} alt="signature"></img>
+              </div>
             </div>
           </article>
         </section>

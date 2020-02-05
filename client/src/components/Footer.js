@@ -48,6 +48,7 @@ export default function Footer() {
                     <a
                       href="https://www.instagram.com/rizabowl/"
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
                       Shop
                     </a>

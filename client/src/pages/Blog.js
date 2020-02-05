@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import Hero from "../components/Hero";
 import Banner from "../components/Banner";
 import { Link } from "react-router-dom";
 import Title from "../components/Title";
-import { ProductContext } from "../context";
+// import { ProductContext } from "../context";
 // import blogDate from "../blog-data";
 import BlogContainer from "../components/BlogContainer";
 // import SingleBlog from "../components/SingleBlog";

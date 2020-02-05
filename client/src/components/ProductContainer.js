@@ -25,11 +25,6 @@ function ProductContainer({ context }) {
 
   const [user, setUser] = useState("");
 
-  const goToForm = () => {
-    if (creating) {
-    }
-  };
-
   useEffect(() => {
     const loadUser = async () => {
       if (localStorage.token) {

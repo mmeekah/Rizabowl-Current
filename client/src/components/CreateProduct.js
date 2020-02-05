@@ -27,15 +27,16 @@ export default function CreateProduct({ fetchData, setCreating, creating }) {
 
   useEffect(() => {
     const getProduct = () => {
-      const res = axios.get(`/api/product/${params.id}`);
+      axios.get(`/api/product/${params.id}`);
     };
     getProduct();
-  }, []);
+  }, [params.id]);
 
   const handleUpload = async (imageToUpload, id, imageNumber) => {
     const formData = new FormData();
     formData.append("file", imageToUpload);
-    const res = axios.post(`/api/image/${imageNumber}/${id}`, formData, {
+    // const res =
+    axios.post(`/api/image/${imageNumber}/${id}`, formData, {
       headers: {
         "Content-Type": "multipart/form-data"
       }
@@ -64,6 +65,7 @@ export default function CreateProduct({ fetchData, setCreating, creating }) {
     if (product.slug) {
       finishUpdating();
     }
+    //eslint-disable-next-line
   }, [product.slug]);
 
   return (
@@ -91,7 +93,7 @@ export default function CreateProduct({ fetchData, setCreating, creating }) {
                 value={product.slug}
                 onChange={handleChange}
               ></input> */}
-            <div className="form-group">
+            <div className="form-group ">
               <label htmlFor="type">Category</label>
               <input
                 type="text"
@@ -110,7 +112,7 @@ export default function CreateProduct({ fetchData, setCreating, creating }) {
                 label="Description"
                 rows="5"
                 placeholder="Description"
-                className="input"
+                className="input-desc"
                 value={product.description}
                 onChange={handleChange}
               ></textarea>

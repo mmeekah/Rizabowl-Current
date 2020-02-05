@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Services from "../components/Services";
 import FeaturedProducts from "../components/FeaturedProducts";
 import Carousel from "../components/Carousel";
-import Footer from "../components/Footer";
+// import Footer from "../components/Footer";
 
 export default function Home() {
   useEffect(() => {
@@ -18,11 +18,11 @@ export default function Home() {
     <>
       <div
         id="carouselExampleSlidesOnly"
-        class="carousel slide"
+        className="carousel slide"
         data-ride="carousel"
       >
-        <div class="carousel-inner">
-          <div class="carousel-item active">
+        <div className="carousel-inner">
+          <div className="carousel-item active">
             <Hero className="homeHero">
               <Banner title="new collection" subtitle="Spring 2020">
                 <Link to="/products" className="btn-primary">
@@ -31,7 +31,7 @@ export default function Home() {
               </Banner>
             </Hero>
           </div>
-          <div class="carousel-item">
+          <div className="carousel-item">
             <Carousel />
           </div>
         </div>

@@ -1,17 +1,16 @@
-import React, { useState, history } from "react";
-import { Link } from "react-router-dom";
-import defaultImg from "../images/room-1.jpeg";
+import React, { useState } from "react";
+
 import PropTypes from "prop-types";
-import DeleteProductBtn from "./DeleteProductBtn";
+
 import "../blog.css";
 import axios from "axios";
 
 export default function Post({ post, fetchBlogData, removePost, user }) {
-  const { title, image, _id } = post;
+  const { image, _id } = post;
   const [editing, setEditing] = useState(false);
   const [titleField, setTitleField] = useState(post.title);
   const [postField, setPostField] = useState(post.post);
-  const [imageField, setImageField] = useState(post.image);
+  const [setImageField] = useState(post.image);
 
   const startEditingBlog = () => {
     setEditing(!editing);
@@ -63,7 +62,7 @@ export default function Post({ post, fetchBlogData, removePost, user }) {
           src={`data:${image.mimeType};base64,${new Buffer(image.data).toString(
             "base64"
           )}`}
-          alt="image"
+          alt="blog"
         />
       ) : null}
       <div className="blog-desc">

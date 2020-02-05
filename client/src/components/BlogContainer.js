@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { withBlogConsumer } from "../BlogContext";
-import Loading from "./Loading";
+// import Loading from "./Loading";
 import AddProductBtn from "./AddProductBtn";
 import setAuthToken from "../utils/setAuthToken";
 import axios from "axios";
 import CreatePost from "./CreatePost";
 import BlogList from "./BlogList";
-import DeleteImageBtn from "../components/DeleteImageBtn";
+// import DeleteImageBtn from "../components/DeleteImageBtn";
 import { HashLink as Link } from "react-router-hash-link";
 
 function BlogContainer({ context }) {
@@ -51,12 +51,12 @@ function BlogContainer({ context }) {
   // this.props.history.push("/blog");
   // };
 
-  const editCurrentPost = () => {
-    const { editing } = this.state;
-    this.setState({
-      editing: !editing
-    });
-  };
+  // const editCurrentPost = () => {
+  //   const { editing } = this.state;
+  //   this.setState({
+  //     editing: !editing
+  //   });
+  // };
 
   // handleChange = e => {
   // const { name, value } = e.target;

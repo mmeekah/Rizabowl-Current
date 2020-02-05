@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import defaultBcg from "../images/room-1.jpeg";
-import Hero from "../components/Hero";
+
 import Banner from "../components/Banner";
 import { Link } from "react-router-dom";
 import { ProductContext } from "../context";
@@ -260,7 +260,7 @@ export default class extends Component {
                     type="button"
                     onClick={this.removeCurrentProduct}
                   >
-                    <i class="far fa-trash-alt"></i>
+                    <i className="far fa-trash-alt"></i>
                   </button>
 
                   <button

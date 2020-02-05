@@ -11,7 +11,7 @@ export default class FeaturedProducts extends Component {
     let { loading, featuredProducts: products } = this.context;
 
     products = products.map(product => {
-      return <Product key={product.id} product={product} />;
+      return <Product key={product._id} product={product} />;
     });
 
     return (
