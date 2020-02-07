@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"rizabowl.products"}],"uuid":"e6623aeb159745149ecf8e3e63e14717"}
